@@ -53,4 +53,8 @@ def scrape_spirits(spirits_data):
     driver.quit()
     return available_spirits
 
-available_spirits = scrape_spirits(spirits_data)
+if __name__ == "__main__":
+    from data import read_csv
+    spirits_data = read_csv('spirits.csv')
+    available_spirits = scrape_spirits(spirits_data)
+    print(available_spirits)
